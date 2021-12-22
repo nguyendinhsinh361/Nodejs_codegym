@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sử dụng được phương thức every() và lambda</h2>
+
+    <p>Thông tin học sinh:</p>
+    <p id="student"></p>
+
+    <p>Is all student are male ???</p>
+    <p id="result"></p>
+
+    <script>
+        const students = [
+            {
+                name: "Nguyen Dinh Sinh",
+                sex: "male"
+            },
+            {
+                name: "Nguyen Van Nam",
+                sex: "male"
+            },
+            {
+                name: "Nguyen Thien Thuat",
+                sex: "male"
+            }
+        ]; 
+        let newStudents = students.map((ele, index) => {
+            return {...ele, id: index}
+        })
+        document.getElementById('student').innerHTML = JSON.stringify(newStudents);
+
+        let resultStd = newStudents.every(ele => ele.sex === 'male' ? true : false);
+
+        document.getElementById('result').innerHTML = resultStd;
+    </script>
+</body>
+</html>
