@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sử dụng được phương thức some() và lambda để kiểm tra mảng có phần tử thỏa điều kiện</h2>
+
+    <p>Array numbers: </p>
+    <p id="numbers"></p>
+
+    <p>Is have number greater than 100 ???</p>
+    <p id="result"></p>
+    <script>
+        const numbers = [13, 12, 12, 4, 15, 5, 32, 43];
+        document.getElementById('numbers').innerHTML = numbers;
+
+        let resultNum = numbers.some(ele => ele > 100 ? true : false);
+        document.getElementById('result').innerHTML = resultNum;
+    </script>
+</body>
+</html>
