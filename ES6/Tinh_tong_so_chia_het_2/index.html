@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sử dụng được phương thức filter(), reducer() và lambda</h2>
+
+    <p>Array Numbers : </p>
+    <p id="numbers"></p>
+
+    <p>Total of even numbers in array:</p>
+    <p id="result"></p>
+
+    <script>
+        const numbers = [13, 122, 12, 4, 17, 3, 44, 26];
+
+        document.getElementById('numbers').innerHTML = numbers;
+        const evenNumbers = numbers.filter(ele => ele % 2 == 0);
+        console.log(evenNumbers);
+
+        let totalEven = evenNumbers.reduce((pre, cur) => pre+cur)
+        document.getElementById('result').innerHTML = totalEven;
+    </script>
+</body>
+</html>
