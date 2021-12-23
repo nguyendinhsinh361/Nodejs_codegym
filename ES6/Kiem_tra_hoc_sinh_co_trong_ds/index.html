@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Sử dụng được phương thức sort(), findIndex() và lambda</h2>
+
+    <p>Thông tin các sinh viên</p>
+    <p id="student"></p>
+
+    <p>Sinh viên có tên: <input type="text" name="" id="nameStd"> trong lớp có số điểm đứng thứ </p>
+    <button id="check">Kiểm tra</button>
+    <p>Result: </p>
+    <p id="result"></p>
+
+    <script>
+        const students = [
+            {
+                name: "Sinh",
+                score: 8
+            },
+            {
+                name: "Minh",
+                score: 3
+            },
+            {
+                name: "Anh",
+                score: 7
+            }
+        ];
+        
+        document.getElementById('student').innerHTML = JSON.stringify(students);
+        
+        students.sort((a,b) => {
+            return b.score-a.score;
+        });
+
+        
+        let checkStd = document.getElementById('nameStd');
+        checkStd.addEventListener('change', (e) => {
+            let nameStudent = e.target.value;
+            let index = students.findIndex(ele => ele.name === nameStudent);
+            index = index > -1 ? ++index : index; 
+            document.getElementById('result').innerHTML = index;
+        })
+    </script>
+</body>
+</html>
